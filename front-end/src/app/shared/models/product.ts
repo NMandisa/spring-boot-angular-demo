@@ -3,3 +3,10 @@ export class Product {
    name: string="";
    description: string="";
 }
+export interface Image {
+  url: string;
+}
+
+export interface Details {
+  //Product Details..
+}
