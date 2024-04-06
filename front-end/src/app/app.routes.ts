@@ -1,10 +1,10 @@
 import {Routes} from '@angular/router';
-import {ProductComponent} from "./components/product/product.component";
 import {BrandComponent} from "./components/brand/brand.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {CategoryComponent} from "./components/category/category.component";
 import {PageNotFoundComponent} from "./shared/ui/page-not-found/page-not-found.component";
 import {HomeComponent} from "./components/home/home.component";
+import {ProductListComponent} from "./components/product-list/product-list.component";
 
 export const routes: Routes = [
   { path: '',
@@ -13,9 +13,9 @@ export const routes: Routes = [
   { path: '',
     title:'Home',
     component:HomeComponent},
-  { path: 'product',
+  { path: 'product-list',
     title:"Product",
-    component: ProductComponent },
+    component: ProductListComponent },
   { path: 'brand',
     title:"Brand",
     component: BrandComponent },

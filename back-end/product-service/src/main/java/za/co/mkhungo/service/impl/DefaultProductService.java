@@ -5,7 +5,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import za.co.mkhungo.facade.ProductFacade;
+import za.co.mkhungo.response.ProductResponse;
 import za.co.mkhungo.service.ProductService;
+
+import java.util.Collection;
 
 /**
  * @author Noxolo.Mkhungo
@@ -17,5 +20,10 @@ public class DefaultProductService implements ProductService {
   private final ProductFacade productFacade;
   public DefaultProductService(@Qualifier("defaultProductFacade") ProductFacade productFacade){
     this.productFacade=productFacade;
+  }
+
+  @Override
+  public Collection<ProductResponse> getProducts() {
+    return productFacade.products();
   }
 }

@@ -23,14 +23,14 @@ public class ProductController {
   }
   @GetMapping(value = ProductURIConstants.GET_ALL_PRODUCTS)
   public ResponseEntity<?> list (){
-    return new ResponseEntity<>(null,null, HttpStatus.ACCEPTED);
+    return new ResponseEntity<>(productService.getProducts(),null, HttpStatus.ACCEPTED);
   }
   @PostMapping(value = ProductURIConstants.CREATE_PRODUCT)
   public ResponseEntity <?> create(@RequestBody ProductRequest productRequest){
     return new ResponseEntity<>(null,null, HttpStatus.CREATED);
   }
   @PostMapping(value = ProductURIConstants.GET_PRODUCT)
-  public ResponseEntity<?> getTestById(@PathVariable("id") Long id){
+  public ResponseEntity<?> getById(@PathVariable("id") Long id){
     return new ResponseEntity<>(null,null, HttpStatus.OK);
   }
   @DeleteMapping(value = ProductURIConstants.DELETE_PRODUCT)
