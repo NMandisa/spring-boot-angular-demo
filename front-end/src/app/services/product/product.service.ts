@@ -3,6 +3,7 @@ import { HttpClient , HttpHeaders ,HttpErrorResponse} from '@angular/common/http
 import { Observable , throwError} from 'rxjs';
 import { Product } from '../../shared/models/product';
 import { retry, catchError } from 'rxjs/operators';
+import {Form, FormControl, FormGroup} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,8 @@ export class ProductService {
     return this.http.get<Product>(`${this.baseurl} + '/products/' + ${id}`).pipe(retry(1), catchError(this.errorHandler));
   }
 
-  createProduct(product: Product): Observable<any> {
+  //createProduct(product: Product): Observable<any> {
+  createProduct(product:Product): Observable<any> {
    // return this.http.post(`${this.baseurl}`, product);
     return this.http.post(`${this.baseurl} + '/products/add/',${this.httpOptions}`,product).pipe(retry(1), catchError(this.errorHandler));
   }

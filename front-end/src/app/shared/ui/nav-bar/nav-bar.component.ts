@@ -8,7 +8,7 @@ import {RouterLink, RouterOutlet, RouterLinkActive} from "@angular/router";
   selector: 'app-nav-bar',
   standalone: true,
   imports: [
-    MatToolbar,MatToolbarRow,MatIconModule,
+    MatToolbar, MatToolbarRow, MatIconModule,
     MatAnchor, RouterLink, RouterOutlet, RouterLinkActive
   ],
   templateUrl: './nav-bar.component.html',
