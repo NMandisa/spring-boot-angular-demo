@@ -13,29 +13,18 @@
  *
  */
 
-package za.co.mkhungo.domain;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.*;
-import za.co.mkhungo.domain.enums.WarehouseType;
+package za.co.mkhungo.domain.enums;
 
 /**
  * @author Noxolo.Mkhungo
  */
-@Entity
-@NamedQuery(name = "Warehouse.findByStockId", query = "SELECT w FROM Warehouse w WHERE w.stockId = :stockId")
-@Table
-public class Warehouse {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id", nullable = false)
-  private Long id;
-  @Enumerated(EnumType.STRING)
-  private WarehouseType warehouseType;
-  private Long stockId;
-
-  @OneToOne(mappedBy = "warehouse", cascade = CascadeType.ALL)
-  @JsonManagedReference
-  private Address address;
-
+public enum WarehouseType {
+    DISTRIBUTION_CENTRE,
+    STORE,
+    PUBLIC,
+    PRIVATE ,
+    BONDED ,
+    CLIMATE_CONTROLLED,
+    SMART ,
+    CONSOLIDATED
 }

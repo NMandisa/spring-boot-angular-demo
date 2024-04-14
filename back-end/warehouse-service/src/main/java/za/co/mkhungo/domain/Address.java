@@ -15,27 +15,27 @@
 
 package za.co.mkhungo.domain;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import za.co.mkhungo.domain.enums.WarehouseType;
 
 /**
  * @author Noxolo.Mkhungo
  */
 @Entity
-@NamedQuery(name = "Warehouse.findByStockId", query = "SELECT w FROM Warehouse w WHERE w.stockId = :stockId")
 @Table
-public class Warehouse {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id", nullable = false)
-  private Long id;
-  @Enumerated(EnumType.STRING)
-  private WarehouseType warehouseType;
-  private Long stockId;
+public class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-  @OneToOne(mappedBy = "warehouse", cascade = CascadeType.ALL)
-  @JsonManagedReference
-  private Address address;
 
+    @OneToOne
+    @JsonBackReference
+    @JoinTable(
+            name = "warehouse_has_address",
+            joinColumns = @JoinColumn(name = "id", referencedColumnName = "address_id"),
+            inverseJoinColumns = @JoinColumn(name = "id", referencedColumnName = "warehouse_id",foreignKey=@ForeignKey(name = "warehouse_id_fk")
+            ))
+    private Warehouse warehouse;
 }
