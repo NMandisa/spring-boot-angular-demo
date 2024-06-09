@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: api-gateway-service
+eureka:
+  client:
+    enabled: false
+server:
+  port: 0000

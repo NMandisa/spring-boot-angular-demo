@@ -1,0 +1,21 @@
+spring:
+    cloud:
+      gateway:
+        mvc:
+          routes:
+#            - id: brand-service
+#              uri: http://localhost:8083/
+#              predicates:
+#                - Path=/brands/**
+#            - id: cart-service
+#              uri: http://localhost:8084/
+#              predicates:
+#                - Path=/carts/**
+#            - id: catalog-service
+#              uri: http://localhost:8093/
+#              predicates:
+#                - Path=/catalogs/**
+#            - id: catalog-item-service
+#              uri: http://localhost:8091/
+#              predicates:
+#                - Path=/catalog-items/**
