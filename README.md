@@ -4,10 +4,18 @@ when I have a better intro I'll upddate this...
 but to be honest this is project was supposed to be a
 personal project 😂 😂
 
-# Features: <br/>
+# Features:
     - brand serivice
     - cart service
     - category service
+    - catalog service
+    - catalog item service
+    - customer service
+    - navigation service
+    - order fulfilment service
+    - order return service
+    - order service
+    - order tracking service
     - product service
     - product rating service
     - product review service

@@ -26,7 +26,7 @@ public class CatalogController {
     return new ResponseEntity<>(null,null, HttpStatus.ACCEPTED);
   }
   @PostMapping(value = CatalogURIConstants.CREATE_CATALOG)
-  public ResponseEntity <?> create(@RequestBody CatalogRequest cartRequest){
+  public ResponseEntity <?> create(@RequestBody CatalogRequest catalogRequest){
     return new ResponseEntity<>(null,null, HttpStatus.CREATED);
   }
   @PostMapping(value = CatalogURIConstants.GET_CATALOG)
@@ -34,7 +34,7 @@ public class CatalogController {
     return new ResponseEntity<>(null,null, HttpStatus.OK);
   }
   @PatchMapping(value = CatalogURIConstants.PATCH_CATALOG)
-  public ResponseEntity <?> update(@RequestBody CatalogRequest catalogItemRequest, @PathVariable("id") Long id){
+  public ResponseEntity <?> update(@RequestBody CatalogRequest catalogRequest, @PathVariable("id") Long id){
     return new ResponseEntity<>(null,null, HttpStatus.OK);
   }
   @DeleteMapping(value = CatalogURIConstants.DELETE_CATALOG)

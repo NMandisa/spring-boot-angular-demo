@@ -1,0 +1,51 @@
+server:
+  port: 8098
+  error:
+    include-binding-errors: always
+    include-message: always
+spring:
+  # Banner
+  main:
+    banner-mode: console
+  output:
+    ansi:
+      enabled: always
+  banner:
+    location: banner/order-fulfilment-banner.txt
+  # Application Name
+  application:
+    name: order-fulfilment-service
+  #Security
+  security:
+    user:
+      name: user
+      password: default
+  ## Datasource
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:./db_order_fulfilment
+    username: sa
+    password: password
+  ## JPA
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    # dev only set to true for debugging purposes
+    show-sql: true
+    ## JPA - HIBERNATE
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        format_sql: true
+  # H2 Database
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: false
+        web-admin-password: 1234
+
+
