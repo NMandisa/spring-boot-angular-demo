@@ -1,5 +1,5 @@
 server:
-  port: 8068
+  port: 8071
   error:
     include-binding-errors: always
     include-message: always
@@ -11,10 +11,10 @@ spring:
     ansi:
       enabled: always
   banner:
-    location: banner/order-fulfilment-banner.txt
+    location: banner/checkout-banner.txt
   # Application Name
   application:
-    name: order-fulfilment-service
+    name: checkout-service
   #Security
   security:
     user:
@@ -23,7 +23,7 @@ spring:
   ## Datasource
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:./db_order_fulfilment
+    url: jdbc:h2:file:./db_checkout
     username: sa
     password: password
   ## JPA
@@ -47,5 +47,3 @@ spring:
         trace: false
         web-allow-others: false
         web-admin-password: 1234
-
-

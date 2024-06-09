@@ -22,6 +22,7 @@ public class CustomerController {
   public CustomerController(@Qualifier("defaultCustomerService") CustomerService customerService){
     this.customerService=customerService;
   }
+  //Admin access controller(User-Role)
   @GetMapping(value = CustomerURIConstants.GET_ALL_CUSTOMERS)
   public ResponseEntity<?> list (){
     return new ResponseEntity<>(null,null, HttpStatus.ACCEPTED);
