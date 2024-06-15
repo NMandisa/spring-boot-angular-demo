@@ -25,9 +25,9 @@ public class ProductRatingExceptionHandler {
   @ExceptionHandler(value = {ProductRatingException.class})
   public final ResponseEntity<CustomErrorResponse> handleProductRatingException(ProductRatingException ex) {
     CustomErrorResponse customError = new CustomErrorResponse();
-    customError.response("exception-cause",ex.getCause());
+    /*customError.response("exception-cause",ex.getCause());
     customError.response("message",ex.getLocalizedMessage());
-    customError.response("trace", Arrays.toString(ex.getStackTrace()));
+    customError.response("trace", Arrays.toString(ex.getStackTrace()));*/
     return new ResponseEntity<>(customError,null, HttpStatus.INTERNAL_SERVER_ERROR);//500
   }
 }

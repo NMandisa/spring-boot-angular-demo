@@ -4,8 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 import za.co.mkhungo.domain.ProductDescription;
 import za.co.mkhungo.facade.ProductDescriptionFacade;
+import za.co.mkhungo.proxy.ProductProxy;
 import za.co.mkhungo.repository.ProductDescriptionRepository;
 import za.co.mkhungo.response.ProductDescriptionResponse;
 
@@ -21,6 +23,8 @@ import java.util.List;
 @Slf4j
 public class DefaultProductDescriptionFacade implements ProductDescriptionFacade {
   private ProductDescriptionRepository productDescriptionRepository;
+  private ProductProxy productProxy;
+  private RestTemplate restTemplate;
   @Autowired
   public DefaultProductDescriptionFacade(ProductDescriptionRepository productDescriptionRepository) {
     this.productDescriptionRepository = productDescriptionRepository;

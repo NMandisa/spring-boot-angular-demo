@@ -2,12 +2,17 @@ package za.co.mkhungo.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.hateoas.server.core.ControllerEntityLinks;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import za.co.mkhungo.constants.ProductURIConstants;
 import za.co.mkhungo.request.ProductRequest;
+import za.co.mkhungo.response.ProductResponse;
 import za.co.mkhungo.service.ProductService;
+
+import java.util.Collection;
 
 /**
  * @author Noxolo.Mkhungo
@@ -19,10 +24,11 @@ import za.co.mkhungo.service.ProductService;
 public class ProductController {
   private final ProductService productService;
   public ProductController(@Qualifier("defaultProductService") ProductService productService){
-      this.productService=productService;
+    this.productService=productService;
   }
   @GetMapping(value = ProductURIConstants.GET_ALL_PRODUCTS)
-  public ResponseEntity<?> list (){
+  public ResponseEntity<Collection<ProductResponse>> list (){
+   // WebMvcLinkBuilder
     return new ResponseEntity<>(productService.getProducts(),null, HttpStatus.ACCEPTED);
   }
   @PostMapping(value = ProductURIConstants.CREATE_PRODUCT)
@@ -30,7 +36,7 @@ public class ProductController {
     return new ResponseEntity<>(null,null, HttpStatus.CREATED);
   }
   @PostMapping(value = ProductURIConstants.GET_PRODUCT)
-  public ResponseEntity<?> getById(@PathVariable("id") Long id){
+  public ResponseEntity<ProductResponse> getById(@PathVariable("id") Long id){
     return new ResponseEntity<>(null,null, HttpStatus.OK);
   }
   @DeleteMapping(value = ProductURIConstants.DELETE_PRODUCT)
