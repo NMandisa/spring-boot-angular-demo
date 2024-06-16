@@ -18,11 +18,6 @@ public class ProductApplication {
 	public ModelMapper modelMapper(){
 		return new ModelMapper();
 	}
-	/*@Bean
-	public RestClient restClient(){
-		HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory();
-		clientHttpRequestFactory.setConnectTimeout(5000);
-		return RestClient.create().mutate().requestFactory(clientHttpRequestFactory).build();
-	}*/
+
 
 }

@@ -10,4 +10,5 @@ import java.util.Collection;
  */
 public interface ProductDescriptionFacade extends Serializable {
     Collection<ProductDescriptionResponse> productDescriptions();
+    ProductDescriptionResponse getProductDescriptionResponse(Long id);
 }

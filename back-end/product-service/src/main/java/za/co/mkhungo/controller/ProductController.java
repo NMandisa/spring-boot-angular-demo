@@ -37,7 +37,9 @@ public class ProductController {
   }
   @PostMapping(value = ProductURIConstants.GET_PRODUCT)
   public ResponseEntity<ProductResponse> getById(@PathVariable("id") Long id){
-    return new ResponseEntity<>(null,null, HttpStatus.OK);
+    ProductResponse productResponse = productService.getProduct(id);
+    log.info("Product Response --> {} class : {} ",productResponse,ProductController.class);
+    return new ResponseEntity<>(productResponse,null, HttpStatus.OK);
   }
   @DeleteMapping(value = ProductURIConstants.DELETE_PRODUCT)
   public ResponseEntity<?> remove(@PathVariable("id") Long id){

@@ -21,9 +21,17 @@ public class DefaultProductService implements ProductService {
   public DefaultProductService(@Qualifier("defaultProductFacade") ProductFacade productFacade){
     this.productFacade=productFacade;
   }
-
   @Override
   public Collection<ProductResponse> getProducts() {
     return productFacade.products();
+  }
+
+  /**
+   * @param id
+   * @return
+   */
+  @Override
+  public ProductResponse getProduct(Long id) {
+    return productFacade.getProduct(id);
   }
 }

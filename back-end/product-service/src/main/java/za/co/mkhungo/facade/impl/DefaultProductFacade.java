@@ -11,6 +11,7 @@ import za.co.mkhungo.domain.Product;
 import za.co.mkhungo.dto.ProductDTO;
 import za.co.mkhungo.dto.ProductDescriptionDTO;
 import za.co.mkhungo.exception.ProductException;
+import za.co.mkhungo.exception.ProductNotFoundException;
 import za.co.mkhungo.exception.handler.ProductResponseErrorHandler;
 import za.co.mkhungo.facade.ProductFacade;
 import za.co.mkhungo.repository.ProductRepository;
@@ -55,7 +56,7 @@ public class DefaultProductFacade implements ProductFacade {
 
   @Override
   public ProductResponse getProduct(Long id) {
-    Product product = productRepository.findById(id).orElseThrow(ProductException::new);
+    Product product = productRepository.findById(id).orElseThrow(ProductNotFoundException::new);
     //populate response with product-description,rating,reviews using RestClient
     return setProductResponse(convertModelToDto(product));
   }

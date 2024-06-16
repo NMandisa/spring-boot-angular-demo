@@ -14,4 +14,11 @@ public class RestTemplateConfiguration {
     RestTemplate restTemplate(RestTemplateBuilder builder) {
         return builder.build();
     }
+
+    /*@Bean
+	public RestClient restClient(){
+		HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory();
+		clientHttpRequestFactory.setConnectTimeout(5000);
+		return RestClient.create().mutate().requestFactory(clientHttpRequestFactory).build();
+	}*/
 }

@@ -6,7 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import za.co.mkhungo.constants.ProductDescriptionURIConstants;
+import za.co.mkhungo.domain.ProductDescription;
+import za.co.mkhungo.dto.ProductDescriptionDTO;
 import za.co.mkhungo.request.ProductDescriptionRequest;
+import za.co.mkhungo.response.ProductDescriptionResponse;
 import za.co.mkhungo.service.ProductDescriptionService;
 
 /**
@@ -26,11 +29,11 @@ public class ProductDescriptionController {
     return new ResponseEntity<>(productDescriptionService.getProductDescriptions(),null, HttpStatus.ACCEPTED);
   }
   @PostMapping(value = ProductDescriptionURIConstants.CREATE_PRODUCT_DESCRIPTION)
-  public ResponseEntity <?> create(@RequestBody ProductDescriptionRequest productRequest){
+  public ResponseEntity <ProductDescriptionResponse> create(@RequestBody ProductDescriptionRequest productRequest){
     return new ResponseEntity<>(null,null, HttpStatus.CREATED);
   }
   @PostMapping(value = ProductDescriptionURIConstants.GET_PRODUCT_DESCRIPTION)
-  public ResponseEntity<?> getById(@PathVariable("id") Long id){
+  public ResponseEntity<ProductDescriptionResponse> getById(@PathVariable("id") Long id){
     return new ResponseEntity<>(null,null, HttpStatus.OK);
   }
   @DeleteMapping(value = ProductDescriptionURIConstants.DELETE_PRODUCT_DESCRIPTION)

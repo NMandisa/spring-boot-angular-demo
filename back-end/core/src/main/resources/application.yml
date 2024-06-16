@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: core
+server:
+  port: 8010
+eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    service-url:
+      default-zone: http://localhost:8761/dashboard
+    healthcheck:
+      enabled: true
+    enabled: true
+sidecar:
+  port: 3000
+  health-uri: http://localhost:3000/health

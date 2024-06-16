@@ -10,4 +10,5 @@ import java.util.Collection;
  */
 public interface ProductService extends Serializable {
     Collection<ProductResponse> getProducts();
+    ProductResponse getProduct(Long id);
 }
