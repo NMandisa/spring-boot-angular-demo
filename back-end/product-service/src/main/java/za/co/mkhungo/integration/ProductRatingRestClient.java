@@ -1,12 +1,7 @@
 package za.co.mkhungo.integration;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestClient;
-import za.co.mkhungo.dto.ProductDescriptionDTO;
-import za.co.mkhungo.dto.ProductRatingDTO;
-import za.co.mkhungo.exception.handler.ProductResponseErrorHandler;
 import za.co.mkhungo.integration.api.AbstractApiClient;
 
 /**

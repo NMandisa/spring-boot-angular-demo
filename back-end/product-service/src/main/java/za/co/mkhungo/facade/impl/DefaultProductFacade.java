@@ -1,18 +1,13 @@
 package za.co.mkhungo.facade.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestClient;
 import za.co.mkhungo.domain.Product;
 import za.co.mkhungo.dto.ProductDTO;
-import za.co.mkhungo.dto.ProductDescriptionDTO;
-import za.co.mkhungo.exception.ProductException;
 import za.co.mkhungo.exception.ProductNotFoundException;
-import za.co.mkhungo.exception.handler.ProductResponseErrorHandler;
 import za.co.mkhungo.facade.ProductFacade;
 import za.co.mkhungo.repository.ProductRepository;
 import za.co.mkhungo.response.ProductResponse;

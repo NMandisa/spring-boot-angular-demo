@@ -1,15 +1,14 @@
-package za.co.mkhungo.core;
+package za.co.mkhungo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.sidecar.EnableSidecar;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@EnableSidecar
 @SpringBootApplication
-public class CoreApplication {
+public class PaymentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CoreApplication.class, args);
+		SpringApplication.run(PaymentApplication.class, args);
 	}
 
 }

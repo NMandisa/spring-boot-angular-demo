@@ -1,4 +1,4 @@
-package za.co.mkhungo.dto;
+package za.co.mkhungo.common.dto;
 
 /**
  * @author Noxolo.Mkhungo

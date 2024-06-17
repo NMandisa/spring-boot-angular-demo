@@ -1,13 +1,13 @@
-package za.co.mkhungo.response;
+package za.co.mkhungo.common.response;
 
 import lombok.*;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.springframework.hateoas.RepresentationModel;
+import za.co.mkhungo.common.dto.ProductDTO;
 import za.co.mkhungo.common.dto.ProductDescriptionDTO;
 import za.co.mkhungo.common.dto.ProductRatingDTO;
 import za.co.mkhungo.common.dto.ProductReviewDTO;
-import za.co.mkhungo.dto.ProductDTO;
 
 /**
  * @author Noxolo.Mkhungo
@@ -27,12 +27,12 @@ public class ProductResponse extends RepresentationModel<ProductResponse> {
         this.productDto=productDto;
     }
 
-    public ProductResponse(ProductDTO productDto,ProductDescriptionDTO descriptionDto){
+    public ProductResponse(ProductDTO productDto, ProductDescriptionDTO descriptionDto){
         this.productDto=productDto;
         this.descriptionDto=descriptionDto;
     }
 
-    public ProductResponse(ProductDTO productDto,ProductDescriptionDTO descriptionDto,ProductReviewDTO reviewDto){
+    public ProductResponse(ProductDTO productDto, ProductDescriptionDTO descriptionDto, ProductReviewDTO reviewDto){
         this.productDto=productDto;
         this.descriptionDto=descriptionDto;
         this.reviewDto=reviewDto;

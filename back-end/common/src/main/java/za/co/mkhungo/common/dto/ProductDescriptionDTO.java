@@ -1,4 +1,4 @@
-package za.co.mkhungo.dto;
+package za.co.mkhungo.common.dto;
 
 import lombok.Builder;
 import lombok.Data;
@@ -8,9 +8,8 @@ import lombok.Data;
  */
 @Data
 @Builder
-public class ProductReviewDTO {
+public class ProductDescriptionDTO {
     private Long id;
-    private String review;
+    private String description;
     private Long productId;
-    private Long customerId;
 }
