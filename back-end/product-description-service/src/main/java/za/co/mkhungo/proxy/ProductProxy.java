@@ -3,7 +3,7 @@ package za.co.mkhungo.proxy;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import za.co.mkhungo.common.response.ProductDescriptionResponse;
+import za.co.mkhungo.common.response.ProductResponse;
 
 /**
  * @author Noxolo.Mkhungo
@@ -13,5 +13,5 @@ import za.co.mkhungo.common.response.ProductDescriptionResponse;
 @FeignClient(name="product-service")
 public interface ProductProxy {
     @PostMapping("/product-service/{id}")
-    ProductDescriptionResponse retrieveProductbyId(@PathVariable("id") Long id);
+    ProductResponse retrieveProductbyId(@PathVariable("id") Long id);
 }
