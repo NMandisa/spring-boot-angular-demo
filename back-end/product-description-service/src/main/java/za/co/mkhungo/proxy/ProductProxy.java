@@ -1,6 +1,9 @@
 package za.co.mkhungo.proxy;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import za.co.mkhungo.common.response.ProductDescriptionResponse;
 
 /**
  * @author Noxolo.Mkhungo
@@ -9,5 +12,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(name="product-service", url="localhost:8082")
 @FeignClient(name="product-service")
 public interface ProductProxy {
-
+    @PostMapping("/product-service/{id}")
+    ProductDescriptionResponse retrieveProductbyId(@PathVariable("id") Long id);
 }
