@@ -3,6 +3,7 @@ package za.co.mkhungo.response;
 import lombok.*;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.hateoas.RepresentationModel;
 import za.co.mkhungo.common.dto.ProductDescriptionDTO;
 import za.co.mkhungo.common.dto.ProductRatingDTO;

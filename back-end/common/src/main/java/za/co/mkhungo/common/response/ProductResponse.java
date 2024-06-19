@@ -3,6 +3,7 @@ package za.co.mkhungo.common.response;
 import lombok.*;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.hateoas.RepresentationModel;
 import za.co.mkhungo.common.dto.ProductDTO;
 import za.co.mkhungo.common.dto.ProductDescriptionDTO;
@@ -12,6 +13,7 @@ import za.co.mkhungo.common.dto.ProductReviewDTO;
 /**
  * @author Noxolo.Mkhungo
  */
+@Document(indexName = "product_index")
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
