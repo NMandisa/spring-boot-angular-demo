@@ -1,8 +1,5 @@
 # Introduction:
-My e-commerce proof of concept demo project well...
-when I have a better intro I'll upddate this...
-but to be honest this is project was supposed to be a
-personal project 😂 😂
+My e-commerce proof of concept  pet/personal project using Microservices Architecture Design Pattern
 
 # Features:
     - brand serivice
