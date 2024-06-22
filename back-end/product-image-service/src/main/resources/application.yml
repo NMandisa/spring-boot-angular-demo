@@ -1,0 +1,23 @@
+server:
+  port: 8063
+spring:
+  # Banner
+  main:
+    banner-mode: console
+  output:
+    ansi:
+      enabled: always
+  banner:
+    location: banner/product-image-banner.txt
+  application:
+    name: product-image-service
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: db_product_image
+eureka:
+  client:
+    enabled: true
+    service-url:
+      default-zone: http://localhost:8761/dashboard
