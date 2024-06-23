@@ -20,9 +20,9 @@ export class ProductService {
     }),
   };
 
-  getProducts(): Observable<any> {
+  getProducts(): Observable<Product[]>   {
     //return this.http.get<Product>(`${this.baseurl+"/products"}`);
-    return this.http.get<any>(`${this.baseurl}products/`).pipe(retry(1), catchError(this.errorHandler));
+    return this.http.get<Product[]>(`${this.baseurl}products/`).pipe(retry(1), catchError(this.errorHandler));
   }
 
   getProduct(id: number): Observable<any> {

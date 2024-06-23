@@ -1,19 +1,25 @@
 server:
   port: 8065
-    #servlet:
-    #context-path: api.localhost/
-    #application-display-name: product-search-service
-    #error:
-    #include-binding-errors: always
-    #include-message: always
-    #include-stacktrace: never
-  #include-exception: true
+  compression:
+    enabled: true
+    # You can also configure the compression thresholds like this
+    min-response-size: 1024
+    mime-types: text/html,text/xml,text/plain,text/css,application/json
+#  servlet:
+#    context-path: api.localhost/
+#    application-display-name: product-search-service
+#    error:
+#      include-binding-errors: always
+#      include-message: always
+#      include-stacktrace: never
+#  include-exception: true
 spring:
   application:
     name: product-search-service
   # Banner
   main:
     banner-mode: console
+    #web-application-type: none
   output:
     ansi:
       enabled: always

@@ -18,6 +18,7 @@ import java.util.Collection;
  * @author Noxolo.Mkhungo
  */
 @CrossOrigin(allowedHeaders = {"*"}, origins = "*")
+//@EnableCompression
 @RestController
 @RequestMapping(ProductURIConstants.PRODUCT_REST_MAPPING)
 @Slf4j
