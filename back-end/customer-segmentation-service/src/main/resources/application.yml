@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: customer-segmentation-service
+  # Banner
+  main:
+    banner-mode: console
+    allow-bean-definition-overriding: true
+  output:
+    ansi:
+      enabled: always
+  banner:
+    location: banner/customer-segmentation-banner.txt
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: db_customer_segmentation
+  elasticsearch:
+    username:
+    path-prefix:
+eureka:
+  client:
+    enabled: true
+    service-url:
+      default-zone: http://localhost:8761/dashboard
+server:
+  port: 8012
